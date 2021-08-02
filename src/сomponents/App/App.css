@@ -11,7 +11,7 @@
   text-transform: uppercase;
 }
 
-h1 {
+.title {
   text-transform: uppercase;
   font-size: 86px;
   font-weight: 500;
@@ -28,13 +28,13 @@ h1 {
   margin: 0 20px 90px 20px;
 }
 
-.nav-m {
+.nav__menu {
   display: flex;
   flex-direction: row;
   list-style: none;
 }
 
-.nav-item {
+.nav__item {
   padding: 10px 17px;
   margin-right: 10px;
   color: #c4c4c4;
@@ -44,12 +44,12 @@ h1 {
   border: 1px solid rgba(255, 255, 255, 0);
 }
 
-.nav-item-selected {
+.selected {
   opacity: 1;
   border: 1px solid #c4c4c4;
 }
 
-.form-search {
+.nav__search {
   border-bottom: 1px solid rgba(196, 196, 196, 0.5);
 }
 
@@ -87,44 +87,20 @@ h1 {
   height: 100%;
 }
 
-.painting:nth-child(1) {
-}
-.painting:nth-child(2) {
-}
-.painting:nth-child(3) {
-}
-.painting:nth-child(4) {
-}
 .painting:nth-child(5) {
   grid-row-start: 1;
   grid-row-end: 3;
   grid-column-start: 3;
   grid-column-end: 5;
 }
-.painting:nth-child(6) {
-}
-.painting:nth-child(7) {
-}
-.painting:nth-child(8) {
-}
-.painting:nth-child(9) {
-}
-.painting:nth-child(10) {
-}
-.painting:nth-child(11) {
-}
-.painting:nth-child(12) {
-}
-.painting:nth-child(13) {
-}
 
-.img {
+.painting__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.img-hover {
+.hover {
   background: black;
   opacity: 0.3;
 }
@@ -137,7 +113,7 @@ h1 {
   height: 218px;
 }
 
-.painting_info {
+.painting__info {
   z-index: 1;
   position: absolute;
   transform: translate(27px, -175px);
@@ -148,23 +124,23 @@ h1 {
   display: none;
 }
 
-.info_item {
+.painting__item {
   margin-bottom: 50px;
 }
 
-.buy_item {
+.painting__buy {
   display: flex;
 }
 
-.price {
+.painting__price {
 }
 
-.sale {
+.painting__sale {
   text-decoration: line-through;
   opacity: 0.5;
 }
 
-.btn-buy {
+.painting__btn__buy {
   padding: 10px 15px;
   color: #c4c4c4;
   background: none;
@@ -174,12 +150,12 @@ h1 {
   cursor: pointer;
 }
 
-.btn-buy:hover {
+.painting__btn__buy:hover {
   background-color: #554e4e;
   border: 1px solid rgba(255, 255, 255, 0);
 }
 
-.btn-cart {
+.painting__btn__cart {
   background-color: #dccece;
   border: 1px solid rgba(255, 255, 255, 0);
   padding: 9px 15px;
@@ -188,7 +164,7 @@ h1 {
   cursor: pointer;
 }
 
-.cart-count {
+.header__card {
   background-color: #c4c4c4;
   color: black;
   padding: 0px 5px;
@@ -215,7 +191,7 @@ h1 {
 }
 
 @media screen and (max-width: 910px) {
-  h1 {
+  .title {
     font-size: 60px;
   }
 
@@ -244,19 +220,19 @@ h1 {
     flex-direction: column;
   }
 
-  .nav-m {
+  .nav__menu {
     justify-content: space-between;
     margin-bottom: 30px;
   }
 
-  .form-search {
+  .nav__search {
     display: flex;
     justify-content: space-between;
   }
 }
 
 @media screen and (max-width: 590px) {
-  h1 {
+  .title {
     font-size: 40px;
   }
 
@@ -288,7 +264,7 @@ h1 {
     margin-bottom: 30px;
   }
 
-  .nav-item {
+  .nav__item {
     padding: 10px 10px;
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Heading(props) {
   return (
-    <h1>
+    <h1 className="title">
       Картины эпохи <br />возрождения
     </h1>
   );

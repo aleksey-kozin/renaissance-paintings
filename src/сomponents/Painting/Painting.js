@@ -14,47 +14,49 @@ function Painting({ painting }) {
     >
       {painting.sold ? (
         <img
-          className={showInfo ? 'img img-hover' : 'img img-hover'}
+          className={showInfo ? 'painting__img hover' : 'painting__img hover'}
           src={painting.img}
           alt=""
         />
       ) : (
         <img
-        className={showInfo ? 'img img-hover' : 'img'}
-        src={painting.img}
-        alt=""
-      />
+          className={showInfo ? 'painting__img hover' : 'painting__img'}
+          src={painting.img}
+          alt=""
+        />
       )}
 
-      <div className={showInfo ? 'painting_info' : 'painting_info none'}>
-        <div className="info_item">
+      <div className={showInfo ? 'painting__info' : 'painting__info none'}>
+        <div className="painting__item">
           <h4>{painting.title}</h4>
           <p>{painting.artist}</p>
         </div>
-        <div className="buy_item">
+        <div className="painting__buy">
           {painting.sold ? (
             <p>Продана на аукционе</p>
           ) : (
             <>
               {painting.cart ? (
                 <>
-                  <div className="price">
-                    <p className="sale">2000000$</p>
-                    <p className="normal">1000000$</p>
+                  <div className="painting__price">
+                    <p className="painting__sale">2000000$</p>
+                    <p className="painting__regular">1000000$</p>
                   </div>
-                  <button className="btn-cart">В корзине &#10003;</button>
+                  <button className="painting__btn__cart">
+                    В корзине &#10003;
+                  </button>
                 </>
               ) : (
                 <>
-                  <div className="price">
-                    <p className="sale">2000000$</p>
-                    <p className="normal">1000000$</p>
+                  <div className="painting__price">
+                    <p className="painting__sale">2000000$</p>
+                    <p className="painting__regular">1000000$</p>
                   </div>
                   <button
                     onClick={() => {
                       dispatch(addCartAC(painting.id))
                     }}
-                    className="btn-buy"
+                    className="painting__btn__buy"
                   >
                     Купить
                   </button>

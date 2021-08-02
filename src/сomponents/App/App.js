@@ -1,4 +1,3 @@
-import Filtration from '../Filtration/Filtration'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import Heading from '../Heading/Heading'
@@ -14,7 +13,6 @@ function App() {
         <Header />
         <div className="App">
           <Heading />
-          <Filtration />
           <Main />
           <Footer />
         </div>

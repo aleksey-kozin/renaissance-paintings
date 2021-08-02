@@ -26,13 +26,13 @@ function Main(props) {
   return (
     <>
       <div className="nav">
-        <ul className="nav-m">
+        <ul className="nav__menu">
           <li
             onClick={() => {
               dispatch(initPaintingsAC())
               setActive(true)
             }}
-            className={active ? 'nav-item nav-item-selected' : 'nav-item'}
+            className={active ? 'nav__item selected' : 'nav__item'}
           >
             Все
           </li>
@@ -41,12 +41,12 @@ function Main(props) {
               dispatch(soldPaintingsAC())
               setActive(false)
             }}
-            className={active ? 'nav-item' : 'nav-item nav-item-selected'}
+            className={active ? 'nav__item' : 'nav__item selected'}
           >
             Проданные на аукционе
           </li>
         </ul>
-        <form className="form-search">
+        <form className="nav__search">
           <input
             className="search"
             type="search"
@@ -56,7 +56,9 @@ function Main(props) {
             onChange={handleSeachPaintings}
             defaultValue={foundPaintings}
           />
-          <button className="btn" type="button">НАЙТИ &#128269;</button>
+          <button className="btn" type="button">
+            НАЙТИ &#128269;
+          </button>
         </form>
       </div>
       <div className="paintings">
