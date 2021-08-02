@@ -16,7 +16,7 @@ function App() {
           <Heading />
           <Filtration />
           <Main />
-        <Footer />
+          <Footer />
         </div>
       </Provider>
     </>

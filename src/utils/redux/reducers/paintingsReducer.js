@@ -1,4 +1,8 @@
-import { INIT_PAINTINGS, SOLD_PAINTINGS } from '../actionTypes'
+import {
+  INIT_PAINTINGS,
+  SOLD_PAINTINGS,
+  ADD_CART,
+} from '../actionTypes'
 
 const initialState = {
   title: '',
@@ -9,6 +13,7 @@ const initialState = {
       title: 'Рождение Венеры',
       artist: 'Сандро Боттичелли, 1501 г',
       sold: false,
+      cart: false,
     },
     {
       id: 2,
@@ -16,6 +21,7 @@ const initialState = {
       title: 'Тайная вечеря',
       artist: 'Леонардо да Винчи, 1495 г',
       sold: false,
+      cart: false,
     },
     {
       id: 3,
@@ -23,6 +29,7 @@ const initialState = {
       title: 'Голова ангела',
       artist: 'Рафаэль Санти, 1501 г',
       sold: false,
+      cart: false,
     },
     {
       id: 4,
@@ -30,6 +37,7 @@ const initialState = {
       title: 'Весна',
       artist: 'Сандро Боттичелли, 1482 г',
       sold: true,
+      cart: false,
     },
     {
       id: 5,
@@ -37,6 +45,7 @@ const initialState = {
       title: 'Мадонна с младенцем',
       artist: 'Роберт Кампен, 1425 г',
       sold: false,
+      cart: false,
     },
     {
       id: 6,
@@ -44,6 +53,7 @@ const initialState = {
       title: 'Данте смотрит на Чистилище',
       artist: 'Аньоло Бронзино, 1530 г',
       sold: false,
+      cart: false,
     },
     {
       id: 7,
@@ -51,6 +61,7 @@ const initialState = {
       title: 'Портрет Данте',
       artist: 'Сандро Боттичелли, 1495 г',
       sold: false,
+      cart: false,
     },
     {
       id: 8,
@@ -58,6 +69,7 @@ const initialState = {
       title: 'Страшный суд',
       artist: 'Джотто ди Бондоне, 1306 г',
       sold: false,
+      cart: false,
     },
     {
       id: 9,
@@ -65,6 +77,7 @@ const initialState = {
       title: 'Страшный суд',
       artist: 'Джотто ди Бондоне, 1306 г',
       sold: true,
+      cart: false,
     },
     {
       id: 10,
@@ -72,6 +85,7 @@ const initialState = {
       title: 'Алтарь святого Коломба',
       artist: 'Рогир ван дер Вейден, 1460 г',
       sold: false,
+      cart: false,
     },
     {
       id: 11,
@@ -79,6 +93,7 @@ const initialState = {
       title: 'Рождение Венеры',
       artist: 'Джотто ди Бондоне, 1306 г',
       sold: false,
+      cart: false,
     },
     {
       id: 12,
@@ -86,6 +101,7 @@ const initialState = {
       title: 'Рождение Венеры',
       artist: 'Джотто ди Бондоне, 1306 г',
       sold: false,
+      cart: false,
     },
     {
       id: 13,
@@ -93,8 +109,10 @@ const initialState = {
       title: 'Рождение Венеры',
       artist: 'Джотто ди Бондоне, 1306 г',
       sold: true,
+      cart: false,
     },
   ],
+  cart: [],
 }
 
 function contactReducer(state = initialState, action) {
@@ -106,6 +124,21 @@ function contactReducer(state = initialState, action) {
       return {
         ...state,
         paintings: state.paintings.filter((el) => el.sold === true),
+      }
+
+    case ADD_CART:
+      return {
+        ...state,
+        cart: [...state.cart, action.payload],
+        paintings: state.paintings.map((el) => {
+          if (el.id === action.payload) {
+            return {
+              ...el,
+              cart: true,
+            }
+          }
+          return el
+        }),
       }
 
     default:
